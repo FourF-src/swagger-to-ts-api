@@ -19,9 +19,9 @@ export function main(filename:string){
   const project = new Project();
   const sourceFile = project.addSourceFileAtPath(filename);
   // remove namespace
-  const flag = 'definitions';
-  const definitions = sourceFile.getInterface(flag);  
-
+  const flag = 'Idefinitions';
+  const definitions = sourceFile.getInterface('definitions');  
+  definitions.rename(flag);
   const properities = definitions.getProperties();
 
   properities.forEach(p => {
