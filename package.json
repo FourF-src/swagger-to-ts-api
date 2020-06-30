@@ -1,6 +1,6 @@
 {
   "name": "swagger-to-ts-api",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "swagger to ts api",
   "main": "dist/index.js",
   "scripts": {
@@ -13,7 +13,9 @@
   "bin": {
     "swagger-to-ts-api": "bin/cli.js"
   },
-  "repository": {"url": "https://github.com/FourF-src/swagger-to-ts-api.git"},
+  "repository": {
+    "url": "https://github.com/FourF-src/swagger-to-ts-api.git"
+  },
   "keywords": [
     "swagger",
     "typescript"
@@ -24,7 +26,8 @@
     "@manifoldco/swagger-to-ts": "^2.0.0",
     "@types/ejs": "^3.0.4",
     "ejs": "^3.1.3",
-    "meow": "^7.0.1"
+    "meow": "^7.0.1",
+    "ts-morph": "^7.1.2"
   },
   "devDependencies": {
     "@types/node": "^14.0.14",
