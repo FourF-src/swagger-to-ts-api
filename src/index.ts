@@ -2,6 +2,7 @@ import meow from 'meow';
 import * as fs from 'fs';
 import * as path from 'path';
 import { main } from './api';
+import { main as rename } from './rename';
 import { execSync } from 'child_process';
 const cli = meow(
   `Usage
@@ -9,6 +10,7 @@ const cli = meow(
 
 Options
   --help                display this
+  --rename              rename json file, ture
   --output, -o          specify output file
   --prettier-config     (optional) specify path to Prettier config file
   --template, -t        (optional) specify template file
@@ -19,6 +21,9 @@ Options
       output: {
         type: 'string',
         alias: 'o',
+      },
+      rename: {
+        type: 'boolean',
       },
       outputApi: {
         type: 'string',
@@ -34,18 +39,26 @@ Options
   }
 );
 
-console.info('generate api ts file using swagger file');
 const pathToSpec = cli.input[0];
 const timeStart = process.hrtime();
 
 (async () => {
+  // rename file
+  if (cli.flags.rename) {
+    rename(pathToSpec);
+  }
+
+
   // exec swagger-to-ts
-  const cmd =     'npx @manifoldco/swagger-to-ts' +
+  const cmd = 'npx @manifoldco/swagger-to-ts@^1.0.0' +
   ` ${pathToSpec} ${cli.flags.output?'--output '+cli.flags.output:''} ${cli.flags.prettierConfig?'----prettier-config '+ cli.flags.prettierConfig:''}`;
   console.info(cmd);
   const stdout = execSync(cmd);
   console.info(stdout.toString());
 
+  // if output-api option no exist
+  if (!cli.flags.outputApi) return; 
+  console.info('generate api ts file using swagger file');
   let spec = '';
   try {
     spec = fs.readFileSync(path.resolve(process.cwd(), pathToSpec), 'utf-8');

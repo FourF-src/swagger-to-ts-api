@@ -10,6 +10,7 @@ use @manifoldco/swagger-to-ts to generate typescript definition file and relevan
 
   Options
     --help                display this
+    --rename              rename json file, ture
     --output, -o          specify output file
     --prettier-config     (optional) specify path to Prettier config file
     --template, -t        (optional) specify template file

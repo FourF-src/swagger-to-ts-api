@@ -1,6 +1,6 @@
 {
   "name": "swagger-to-ts-api",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "swagger to ts api",
   "main": "dist/index.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "bin": {
     "swagger-to-ts-api": "bin/cli.js"
   },
+  "repository": {"url": "https://github.com/FourF-src/swagger-to-ts-api.git"},
   "keywords": [
     "swagger",
     "typescript"
