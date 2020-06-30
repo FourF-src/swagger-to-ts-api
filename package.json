@@ -1,0 +1,33 @@
+{
+  "name": "swagger-to-ts-api",
+  "version": "0.0.2",
+  "description": "swagger to ts api",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "bin": {
+    "swagger-to-ts-api": "bin/cli.js"
+  },
+  "keywords": [
+    "swagger",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@manifoldco/swagger-to-ts": "^2.0.0",
+    "@types/ejs": "^3.0.4",
+    "ejs": "^3.1.3",
+    "meow": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.14",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  }
+}
