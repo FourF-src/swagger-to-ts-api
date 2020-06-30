@@ -26,7 +26,7 @@ export function main(filename:string){
 
   properities.forEach(p => {
     const name = removeQuato(p.getName());
-    const newname = 'I' + isIllegal(name)? rename(name): name;
+    const newname = 'I' + (isIllegal(name)? rename(name): name);
     sourceFile.addTypeAlias({
       name: newname,
       type: `${flag}['${name}']`,
